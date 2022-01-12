@@ -13,3 +13,6 @@
 [submodule "git"]
 	path = git
 	url = https://github.com/petrosAth/git
+[submodule "scripts"]
+	path = scripts
+	url = git@github.com:petrosAth/scripts.git
