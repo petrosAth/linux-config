@@ -21,8 +21,8 @@ HISTFILE=~/.config/zsh/.histfile
 
 autoload -U compinit && compinit -u
 # Show selection highlight
-zstyle ':completion:*' menu select
-zstyle ':completion:*:*:cd:*' menu yes select
+zstyle ':completion:*' menu yes select
+# zstyle ':completion:*:*:cd:*' menu yes select
 # Auto complete with case insenstivity
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
@@ -63,7 +63,7 @@ bindkey -M vicmd '^n' vi-down-line-or-history
 bindkey -M vicmd '^p' vi-up-line-or-history
 
 # Accept selection
-bindkey -M menuselect '^y' accept-line
+bindkey -M viins '^y' .accept-line
 
 # Cancel selection
 bindkey -M menuselect '^e' send-break
