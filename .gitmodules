@@ -1,18 +1,18 @@
 [submodule "nvim"]
-	path = linux-config/nvim
+	path = nvim
 	url = ../nvim.git
 [submodule "ohmyposh"]
-	path = linux-config/ohmyposh
+	path = ohmyposh
 	url = ../ohmyposh.git
 [submodule "powershell"]
-	path = linux-config/powershell
+	path = powershell
 	url = ../powershell.git
 [submodule "starship"]
-	path = linux-config/starship
+	path = starship
 	url = ../starship.git
 [submodule "git"]
-	path = linux-config/git
+	path = git
 	url = ../git.git
 [submodule "scripts"]
-	path = linux-config/scripts
+	path = scripts
 	url = ../scripts.git
