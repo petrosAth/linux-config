@@ -1,4 +1,34 @@
 ### Installation
+#### Create user
+>For Arch start here. For Manjaro start from step `3`
+1. Open sudoers file
+    `EDITOR=vi visudo`
+2. Enable `wheel` group by uncommenting the line
+    `%wheel ALL=(ALL) ALL`
+3. Set root password
+    `passwd`
+4. Create user
+    `useradd -m -G wheel -s /bin/bash <username>`
+5. Set user password
+    `passwd <username>`
+>For WSL continue with the steps below
+6. Exit
+7. From the location of the WSL distribution usin cmd/powershell/pwsh
+    `<distro>.exe config --default-user <username>`
+
+#### Configuration
+1. Initialize keyring
+    `sudo pacman-key --init`
+    `sudo pacman-key --populate`
+2. Set up your choice of pacman mirrors
+    >For Manjaro
+        `sudo pacman-mirrors --country <name>`
+    >For Arch
+        - Uncomment the mirrors of your country in the file below
+            `sudo vi /etc/pacman.d/mirrorlist`
+3. Use deploy script
+    `bash -c "$(curl -#fL raw.githubusercontent.com/petrosAth/scripts/master/deploy/linux/install.sh)"`
+
 1. Update OS
     >`sudo pacman -Syu`
 3. Install `yay`
