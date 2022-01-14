@@ -1,18 +1,18 @@
 [submodule "nvim"]
-	path = nvim
-	url = https://github.com/petrosAth/nvim.git
+	path = linux-config/nvim
+	url = ../nvim.git
 [submodule "ohmyposh"]
-	path = ohmyposh
-	url = https://github.com/petrosAth/ohmyposh.git
+	path = linux-config/ohmyposh
+	url = ../ohmyposh.git
 [submodule "powershell"]
-	path = powershell
-	url = https://github.com/petrosAth/powershell.git
+	path = linux-config/powershell
+	url = ../powershell.git
 [submodule "starship"]
-	path = starship
-	url = https://github.com/petrosAth/starship
+	path = linux-config/starship
+	url = ../starship.git
 [submodule "git"]
-	path = git
-	url = https://github.com/petrosAth/git
+	path = linux-config/git
+	url = ../git.git
 [submodule "scripts"]
-	path = scripts
-	url = git@github.com:petrosAth/scripts.git
+	path = linux-config/scripts
+	url = ../scripts.git
