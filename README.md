@@ -27,7 +27,7 @@
         - Uncomment the mirrors of your country in the file below
             `sudo vi /etc/pacman.d/mirrorlist`
 3. Use deploy script
-    `bash -c "$(curl -#fL raw.githubusercontent.com/petrosAth/scripts/master/deploy/linux/install.sh)"`
+    `bash -c "$(curl -#fL raw.githubusercontent.com/petrosAth/scripts/master/deploy/linux/deploy.sh)"`
 
 1. Update OS
     >`sudo pacman -Syu`
