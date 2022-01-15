@@ -2,7 +2,7 @@
 # Custom prompt engine
 # ------------------------------------------------------------------------------
 # Load oh-my-posh
-eval "$(oh-my-posh --init --shell zsh --config ~/.config/ohmyposh/themes/dracula.omp.json)"
+eval "$(oh-my-posh --init --shell zsh --config ~/dotfiles/ohmyposh/themes/dracula.omp.json)"
 
 # Load strarship
 # export STARSHIP_CONFIG=$HOME/.config/starship/themes/dracula.toml
@@ -16,8 +16,7 @@ alias ga='git add'
 # History
 HISTSIZE=1000
 SAVEHIST=1000
-# HISTFILE=~/.cache/zsh/history
-HISTFILE=~/.config/zsh/.histfile
+HISTFILE=~/.cache/zsh/history
 
 autoload -U compinit && compinit -u
 # Show selection highlight
