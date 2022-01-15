@@ -16,7 +16,7 @@ alias ga='git add'
 # History
 HISTSIZE=1000
 SAVEHIST=1000
-HISTFILE=~/.cache/zsh/history
+HISTFILE=${HOME}/.zsh_history
 
 autoload -U compinit && compinit -u
 # Show selection highlight
