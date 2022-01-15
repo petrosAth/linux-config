@@ -13,6 +13,7 @@
 [submodule "git"]
 	path = git
 	url = ../git.git
+    branch = linux
 [submodule "scripts"]
 	path = scripts
 	url = ../scripts.git
