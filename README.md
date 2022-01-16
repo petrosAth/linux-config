@@ -1,4 +1,9 @@
 # Installation
+## Install a WSL distribution
+1. Run `pwsh` and install a distro using scoop
+    - `scoop install manjarowsl`
+2. Go to `~\scoop\apps\manjarowsl\current` and run
+    - `Manjaro.exe`
 ## Create user
 >For Arch start here. For Manjaro skip to step `3`
 1. Open sudoers file
@@ -14,7 +19,7 @@
 >For WSL continue with the steps below
 6. Exit
 7. From the location of the WSL distribution usin cmd/powershell/pwsh
-    - `<distro>.exe config --default-user <username>`
+    - `Manjaro.exe config --default-user <username>`
 
 ## Configure pacman
 >For Arch start here. For Manjaro skip to step `2`
