@@ -18,23 +18,22 @@
     - `passwd <username>`
 >For WSL continue with the steps below
 6. Exit
-7. From the location of the WSL distribution using `cmd`,`powershell` or `pwsh`
+7. From the location of the WSL distribution (`~\scoop\apps\manjarowsl\current`) use `cmd`,`powershell` or `pwsh` and run
     - `Manjaro.exe config --default-user <username>`
 
 ## Configure pacman
->For Arch start here. For Manjaro skip to step `2`
+>For Arch
 1. Initialize keyring
     - `sudo pacman-key --init`
     - `sudo pacman-key --populate`
-2. Set up your choice of pacman mirrors
-    >For Arch Uncomment the mirrors of your country in the file below
-        - `sudo vi /etc/pacman.d/mirrorlist`
-
-    >For Manjaro pick country using the following command
-        - `sudo pacman-mirrors --country <name>`
+2. Set up your choice of pacman mirrors by uncommenting the mirrors of your country in the file below
+    - `sudo vi /etc/pacman.d/mirrorlist`
+>For Manjaro
+- Pick country using the following command
+    - `sudo pacman-mirrors --country <name>`
 
 ## Use deploy script
-    >`bash -c "$(curl -#fL raw.githubusercontent.com/petrosAth/scripts/master/deploy/linux/install.sh)"`
+`bash -c "$(curl -#fL raw.githubusercontent.com/petrosAth/scripts/master/deploy/linux/install.sh)"`
 
 ## Configure github ssh
 1. Authenticate to the GitHub CLI
