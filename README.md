@@ -1,5 +1,5 @@
-### Installation
-#### Create user
+# Installation
+## Create user
 >For Arch start here. For Manjaro skip to step `3`
 1. Open sudoers file
     - `EDITOR=vi visudo`
@@ -16,7 +16,7 @@
 7. From the location of the WSL distribution usin cmd/powershell/pwsh
     - `<distro>.exe config --default-user <username>`
 
-#### Configure pacman
+## Configure pacman
 >For Arch start here. For Manjaro skip to step `2`
 1. Initialize keyring
     - `sudo pacman-key --init`
@@ -28,10 +28,10 @@
     >For Manjaro pick country using the following command
         - `sudo pacman-mirrors --country <name>`
 
-#### Use deploy script
+## Use deploy script
     >`bash -c "$(curl -#fL raw.githubusercontent.com/petrosAth/scripts/master/deploy/linux/install.sh)"`
 
-#### Configure github ssh
+## Configure github ssh
 1. Authenticate to the GitHub CLI
     - `gh auth login`
 2. Generate a new SSH key
