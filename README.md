@@ -1,6 +1,6 @@
 # Installation
 ## Install a WSL distribution
-1. Run `pwsh` and install a distro using scoop
+1. Run  `cmd`,`powershell` or `pwsh` and install a distro using scoop
     - `scoop install manjarowsl`
 2. Go to `~\scoop\apps\manjarowsl\current` and run
     - `Manjaro.exe`
@@ -18,7 +18,7 @@
     - `passwd <username>`
 >For WSL continue with the steps below
 6. Exit
-7. From the location of the WSL distribution usin cmd/powershell/pwsh
+7. From the location of the WSL distribution using `cmd`,`powershell` or `pwsh`
     - `Manjaro.exe config --default-user <username>`
 
 ## Configure pacman
