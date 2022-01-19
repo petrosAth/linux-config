@@ -33,8 +33,8 @@ This installation guide requires WSL**2**.
     - `sudo pacman-key --populate`
 12. Set up your choice of pacman mirrors by uncommenting the mirrors of your country in the file below
     - `sudo vi /etc/pacman.d/mirrorlist`
-13. Force update Arch keyring
-    - (Circumstantial) `sudo pacman -Syy archlinux-keyring`
+13. Force update Arch keyring (Circumstantial)
+    - `sudo pacman -Syy archlinux-keyring`
 >**ONLY** For Manjaro
 14. Pick country using the following command
     - `sudo pacman-mirrors --country <name>`
@@ -57,6 +57,6 @@ You can press `y`
 4. Add the SSH private key to the ssh-agent
     - `ssh-add ~/.ssh/id_ed25519`
 5. Add the SSH public key to my GitHub account
-    - `gh ssh-key add <path to key_file.pub> --title "key_name"`
+    - `gh ssh-key add ~/.ssh/id_ed25519.pub --title "key title"`
 6. Test SSH connection
     - `ssh -T git@github.com`
