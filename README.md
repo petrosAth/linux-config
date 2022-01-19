@@ -23,11 +23,11 @@ This installation guide requires WSL**2**.
     - `Arch.exe config --default-user <username>`
 
 ## Configure pacman
+>For Arch start here. For Manjaro skip to step `14`
 9. Open pacman config file
     - `sudo vi /etc/pacman.conf`
 10. Comment out the line below
     - `IgnorePkg   = fakeroot`
->For Arch continue here. For Manjaro skip to step `14`
 11. Initialize keyring
     - `sudo pacman-key --init`
     - `sudo pacman-key --populate`
