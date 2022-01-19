@@ -27,14 +27,16 @@ This installation guide requires WSL**2**.
     - `sudo vi /etc/pacman.conf`
 10. Comment out the line below
     - `IgnorePkg   = fakeroot`
->For Arch continue here. For Manjaro skip to step `13`
+>For Arch continue here. For Manjaro skip to step `14`
 11. Initialize keyring
     - `sudo pacman-key --init`
     - `sudo pacman-key --populate`
 12. Set up your choice of pacman mirrors by uncommenting the mirrors of your country in the file below
     - `sudo vi /etc/pacman.d/mirrorlist`
+13. Force update Arch keyring
+    - (Circumstantial) `sudo pacman -Syy archlinux-keyring`
 >**ONLY** For Manjaro
-13. Pick country using the following command
+14. Pick country using the following command
     - `sudo pacman-mirrors --country <name>`
 
 ## Use deploy script
