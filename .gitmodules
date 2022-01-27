@@ -20,3 +20,9 @@
 [submodule "alacritty"]
 	path = alacritty
 	url = ../alacritty.git
+[submodule "FileZilla"]
+	path = FileZilla
+	url = ../FileZilla
+[submodule "synergy"]
+	path = synergy
+	url = ../synergy
