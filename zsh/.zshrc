@@ -1,8 +1,12 @@
+# Fix auto-complete messing prompt
+export LANG=en_US.UTF-8
+
 # ------------------------------------------------------------------------------
 # Custom prompt engine
 # ------------------------------------------------------------------------------
+
 # Load oh-my-posh
-eval "$(oh-my-posh --init --shell zsh --config $HOME/dotfiles/ohmyposh/themes/dracula.omp.json)"
+eval "$(oh-my-posh --init --shell zsh --config $HOME/dotfiles/ohmyposh/themes/nord.omp.json)"
 
 # Load strarship
 # export STARSHIP_CONFIG=$HOME/dotfiles/starship/themes/dracula.toml
