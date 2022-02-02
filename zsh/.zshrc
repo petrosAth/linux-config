@@ -4,24 +4,25 @@ export LANG=en_US.UTF-8
 # ------------------------------------------------------------------------------
 # Theme
 # ------------------------------------------------------------------------------
-zsh_colorscheme="nord" # Alacritty color theme must also be changed
+zsh_theme="nord" # Alacritty theme must also be changed
 zsh_prompt="ohmyposh"
 
 # Custom prompt engine ---------------------------------------------------------
 case ${zsh_prompt} in
     ohmyposh)
         # Load oh-my-posh
-        eval "$(oh-my-posh --init --shell zsh --config $HOME/dotfiles/ohmyposh/themes/${zsh_colorscheme}.omp.json)" ;;
+        eval "$(oh-my-posh --init --shell zsh --config ${HOME}/dotfiles/ohmyposh/themes/${zsh_theme}.omp.json)" ;;
     starship)
         # Load strarship
-        export STARSHIP_CONFIG=$HOME/dotfiles/starship/themes/dracula.toml
+        export STARSHIP_CONFIG=${HOME}/dotfiles/starship/themes/dracula.toml
         eval "$(starship init zsh)" ;;
 esac
 # ------------------------------------------------------------------------------
 
 # Custom dircolors -------------------------------------------------------------
 # Load colorscheme
-eval "$(dircolors ~/dotfiles/zsh/colorschemes/dircolors/${zsh_colorscheme}.dircolors)"
+eval "$(dircolors ${HOME}/dotfiles/zsh/themes/${zsh_theme}/${zsh_theme}.dircolors)"
+
 # Make ls results, colored
 alias ls='ls --color=auto'
 # ------------------------------------------------------------------------------
@@ -40,12 +41,7 @@ HISTFILE=${HOME}/.zsh_history
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # set autosuggestion colorscheme automatically from variable
-case ${zsh_colorscheme} in
-    nord)
-        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#4c566a,bold" ;;
-    dracula)
-        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6272A4,bold" ;;
-esac
+source ${HOME}/dotfiles/zsh/themes/${zsh_theme}/${zsh_theme}.autosuggestion
 
 # Specify how suggestions should be generated
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
