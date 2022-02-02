@@ -49,7 +49,9 @@ ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 # ------------------------------------------------------------------------------
 # Autocomplete
 # ------------------------------------------------------------------------------
+# Initialize zsh-completion
 autoload -U compinit && compinit -u
+
 # Show selection highlight
 zstyle ':completion:*' menu yes select
 # zstyle ':completion:*:*:cd:*' menu yes select
@@ -59,6 +61,20 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 zmodload -i zsh/complist
 # Include hidden files
 _comp_options+=(globdots)
+
+
+# ------------------------------------------------------------------------------
+# Syntax highlighting
+# ------------------------------------------------------------------------------
+# Highlighters
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern regexp cursor root line)
+# Plugin location
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# ------------------------------------------------------------------------------
+# Substring search
+# ------------------------------------------------------------------------------
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # ------------------------------------------------------------------------------
 # Vi mode
@@ -87,10 +103,15 @@ bindkey -M menuselect 'L' vi-end-of-line
 
 
 # Navigate throug history with n/p keys
-bindkey -M viins '^n' vi-down-line-or-history
-bindkey -M viins '^p' vi-up-line-or-history
-bindkey -M vicmd '^n' vi-down-line-or-history
-bindkey -M vicmd '^p' vi-up-line-or-history
+# bindkey -M viins '^n' vi-down-line-or-history
+# bindkey -M viins '^p' vi-up-line-or-history
+# bindkey -M vicmd '^n' vi-down-line-or-history
+# bindkey -M vicmd '^p' vi-up-line-or-history
+bindkey -M viins '^n' history-substring-search-down # Requires substring search plugin
+bindkey -M viins '^p' history-substring-search-up   # Requires substring search plugin
+bindkey -M vicmd '^n' history-substring-search-down # Requires substring search plugin
+bindkey -M vicmd '^p' history-substring-search-up   # Requires substring search plugin
+
 
 # Accept selection
 bindkey -M viins '^y' .accept-line
@@ -159,11 +180,3 @@ precmd_functions+=(_fix_cursor)
 # Aliases
 # ------------------------------------------------------------------------------
 alias ga='git add'
-
-# ------------------------------------------------------------------------------
-# Syntax highlighting
-# ------------------------------------------------------------------------------
-# Highlighters
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern regexp cursor root line)
-# Plugin location
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
