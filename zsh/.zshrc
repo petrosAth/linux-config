@@ -2,26 +2,40 @@
 export LANG=en_US.UTF-8
 
 # ------------------------------------------------------------------------------
-# Custom prompt engine
+# Theme
+# ------------------------------------------------------------------------------
+zsh_colorscheme="nord" # Alacritty color theme must also be changed
+zsh_prompt="ohmyposh"
+
+# Custom prompt engine ---------------------------------------------------------
+case ${zsh_prompt} in
+    ohmyposh)
+        # Load oh-my-posh
+        eval "$(oh-my-posh --init --shell zsh --config $HOME/dotfiles/ohmyposh/themes/${zsh_colorscheme}.omp.json)" ;;
+    starship)
+        # Load strarship
+        export STARSHIP_CONFIG=$HOME/dotfiles/starship/themes/dracula.toml
+        eval "$(starship init zsh)" ;;
+esac
 # ------------------------------------------------------------------------------
 
-# Load oh-my-posh
-eval "$(oh-my-posh --init --shell zsh --config $HOME/dotfiles/ohmyposh/themes/nord.omp.json)"
-
-# Load strarship
-# export STARSHIP_CONFIG=$HOME/dotfiles/starship/themes/dracula.toml
-# eval "$(starship init zsh)"
+# Custom dircolors -------------------------------------------------------------
+# Load colorscheme
+eval "$(dircolors ~/dotfiles/zsh/dircolors/${zsh_colorscheme}.dircolors)"
+# Make ls results, colored
+alias ls='ls --color=auto'
+# ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Aliases
-# ------------------------------------------------------------------------------
-alias ga='git add'
-
 # History
+# ------------------------------------------------------------------------------
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=${HOME}/.zsh_history
 
+# ------------------------------------------------------------------------------
+# Autocomplete
+# ------------------------------------------------------------------------------
 autoload -U compinit && compinit -u
 # Show selection highlight
 zstyle ':completion:*' menu yes select
@@ -93,8 +107,7 @@ for m in visual viopp; do
   done
 done
 
-# ------------------------------------------------------------------------------
-# Cursor shapes
+# Cursor shapes ----------------------------------------------------------------
 # Source: https://unix.stackexchange.com/q/433273
 #
 # https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h2-Functions-using-CSI-_-ordered-by-the-final-character_s_
@@ -107,7 +120,7 @@ done
 # Ps = 6  ⇒  steady bar.
 # ------------------------------------------------------------------------------
 
-# Change cursor shape for different vi modes.
+# Change cursor shape for different vi modes -----------------------------------
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]] ||
      [[ $1 = 'block' ]]; then
@@ -127,8 +140,16 @@ _fix_cursor() {
 
 # Use beam shape cursor on startup and for each new prompt.
 precmd_functions+=(_fix_cursor)
+# ------------------------------------------------------------------------------
 
+# ------------------------------------------------------------------------------
+# Aliases
+# ------------------------------------------------------------------------------
+alias ga='git add'
+
+# ------------------------------------------------------------------------------
 # Syntax highlighting
+# ------------------------------------------------------------------------------
 # Highlighters
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern regexp cursor root line)
 # Plugin location
