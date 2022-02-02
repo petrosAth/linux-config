@@ -127,3 +127,9 @@ _fix_cursor() {
 
 # Use beam shape cursor on startup and for each new prompt.
 precmd_functions+=(_fix_cursor)
+
+# Syntax highlighting
+# Highlighters
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern regexp cursor root line)
+# Plugin location
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
