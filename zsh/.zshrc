@@ -21,7 +21,7 @@ esac
 
 # Custom dircolors -------------------------------------------------------------
 # Load colorscheme
-eval "$(dircolors ~/dotfiles/zsh/dircolors/${zsh_colorscheme}.dircolors)"
+eval "$(dircolors ~/dotfiles/zsh/colorschemes/dircolors/${zsh_colorscheme}.dircolors)"
 # Make ls results, colored
 alias ls='ls --color=auto'
 # ------------------------------------------------------------------------------
@@ -32,6 +32,23 @@ alias ls='ls --color=auto'
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=${HOME}/.zsh_history
+
+# ------------------------------------------------------------------------------
+# Autosuggest
+# ------------------------------------------------------------------------------
+# source "zsh_autosuggestions.zsh" file
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# set autosuggestion colorscheme automatically from variable
+case ${zsh_colorscheme} in
+    nord)
+        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#4c566a,bold" ;;
+    dracula)
+        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6272A4,bold" ;;
+esac
+
+# Specify how suggestions should be generated
+ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 
 # ------------------------------------------------------------------------------
 # Autocomplete
