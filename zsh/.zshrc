@@ -15,7 +15,8 @@ case ${zsh_prompt} in
     starship)
         # Load strarship
         export STARSHIP_CONFIG=${HOME}/dotfiles/starship/themes/dracula.toml
-        eval "$(starship init zsh)" ;;
+        eval "$(starship init zsh)"
+        ;;
 esac
 # ------------------------------------------------------------------------------
 
@@ -107,10 +108,10 @@ bindkey -M menuselect 'L' vi-end-of-line
 # bindkey -M viins '^p' vi-up-line-or-history
 # bindkey -M vicmd '^n' vi-down-line-or-history
 # bindkey -M vicmd '^p' vi-up-line-or-history
-bindkey -M viins '^n' history-substring-search-down # Requires substring search plugin
-bindkey -M viins '^p' history-substring-search-up   # Requires substring search plugin
-bindkey -M vicmd '^n' history-substring-search-down # Requires substring search plugin
-bindkey -M vicmd '^p' history-substring-search-up   # Requires substring search plugin
+bindkey -M viins '^n' history-substring-search-down # Requires history substring search plugin
+bindkey -M viins '^p' history-substring-search-up   # Requires history substring search plugin
+bindkey -M vicmd '^n' history-substring-search-down # Requires history substring search plugin
+bindkey -M vicmd '^p' history-substring-search-up   # Requires history substring search plugin
 
 
 # Accept selection
